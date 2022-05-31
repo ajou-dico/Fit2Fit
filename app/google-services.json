@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "858990236482",
+    "project_id": "fit2fit-4323a",
+    "storage_bucket": "fit2fit-4323a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:858990236482:android:055c40a57ac2c8af7baedb",
+        "android_client_info": {
+          "package_name": "com.dico.fit2fit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "858990236482-h4mielkf1666r0ekd1m6h8koq75t3d20.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTre8Ch4GmZNgtV4PKNM8GKqCNdeZO3Dk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "858990236482-h4mielkf1666r0ekd1m6h8koq75t3d20.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
