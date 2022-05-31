@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fit2Fit">
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="86ddc201dd81d1aadac75cb92eac655b" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
