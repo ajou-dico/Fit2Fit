@@ -24,6 +24,7 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+
     }
     buildFeatures {
         viewBinding true
@@ -31,6 +32,8 @@ android {
 }
 
 dependencies {
+    implementation "com.kakao.sdk:v2-user:2.5.2" // 카카오 로그인
+    implementation "com.kakao.sdk:v2-talk:2.5.2" // 친구, 메시지(카카오톡)
 
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
