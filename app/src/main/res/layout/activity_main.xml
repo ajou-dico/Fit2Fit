@@ -32,7 +32,7 @@
         app:navGraph="@navigation/mobile_navigation" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="test"
@@ -40,7 +40,7 @@
         tools:layout_editor_absoluteY="92dp" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="test2"
