@@ -22,21 +22,22 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_create_account"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_create_account_next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register_title">
 
         <LinearLayout
             android:id="@+id/scroll_linear_layout"
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/captionEmail"
                 style="@style/CaptionTextView"
+                android:textColor="@color/gray"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -64,6 +65,7 @@
             <TextView
                 android:id="@+id/captionPassword"
                 style="@style/CaptionTextView"
+                android:textColor="@color/gray"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -91,6 +93,7 @@
             <TextView
                 android:id="@+id/captionConfirmPassword"
                 style="@style/CaptionTextView"
+                android:textColor="@color/gray"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -118,6 +121,7 @@
             <TextView
                 android:id="@+id/captionNickname"
                 style="@style/CaptionTextView"
+                android:textColor="@color/gray"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -145,6 +149,7 @@
             <TextView
                 android:id="@+id/captionHeight"
                 style="@style/CaptionTextView"
+                android:textColor="@color/gray"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -172,6 +177,7 @@
             <TextView
                 android:id="@+id/captionWeight"
                 style="@style/CaptionTextView"
+                android:textColor="@color/gray"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -198,7 +204,7 @@
         </LinearLayout>
     </ScrollView>
     <Button
-        android:id="@+id/btn_create_account"
+        android:id="@+id/btn_create_account_next"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

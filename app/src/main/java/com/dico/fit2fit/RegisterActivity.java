@@ -1,7 +1,13 @@
 package com.dico.fit2fit;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,33 +21,153 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class RegisterActivity extends AppCompatActivity {
-    private FirebaseAuth mAuth;
+
+    Button nextBtn;
+    EditText editEmail;
+    EditText editPassword;
+    EditText editConfirmPassword;
+    EditText editNickname;
+    EditText editHeight;
+    EditText editWeight;
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-
-        mAuth = FirebaseAuth.getInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        nextBtn = findViewById(R.id.btn_create_account_next);
+        nextBtn.setEnabled(false);
+
+        editEmail = (EditText)findViewById(R.id.editTextEmail);
+        editPassword = (EditText)findViewById(R.id.editTextPassword);
+        editConfirmPassword = (EditText)findViewById(R.id.editTextConfirmPassword);
+        editNickname = (EditText)findViewById(R.id.editTextNickname);
+        editHeight = (EditText)findViewById(R.id.editTextHeight);
+        editWeight = (EditText)findViewById(R.id.editTextWeight);
+
+        editEmail.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                setNextBtnEnabled();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+        editPassword.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                setNextBtnEnabled();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+        editConfirmPassword.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                setNextBtnEnabled();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+        editNickname.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                setNextBtnEnabled();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+        editHeight.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                setNextBtnEnabled();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+        editWeight.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                setNextBtnEnabled();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+        nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String email = editEmail.getText().toString();
+                String password = editPassword.getText().toString();
+                String nickname = editNickname.getText().toString();
+                int height = Integer.parseInt(editHeight.getText().toString());
+                int weight = Integer.parseInt(editWeight.getText().toString());
+
+                Intent intent = new Intent(RegisterActivity.this, SettingGoalActivity.class);
+                intent.putExtra("userEmail", email);
+                intent.putExtra("userPassword", password);
+                intent.putExtra("userNickname", nickname);
+                intent.putExtra("userHeight", height);
+                intent.putExtra("userWeight", weight);
+                startActivity(intent);
+            }
+        });
     }
 
-//    protected void createAccount(String email, String password) {
-//        mAuth.createUserWithEmailAndPassword(email, password)
-//                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        if (task.isSuccessful()) {
-//                            // Sign in success, update UI with the signed-in user's information
-//                            Log.d("TAG", "createUserWithEmail:success");
-//                            FirebaseUser user = mAuth.getCurrentUser();
-//                            updateUI(user);
-//                        } else {
-//                            // If sign in fails, display a message to the user.
-//                            Log.w("TAG", "createUserWithEmail:failure", task.getException());
-//                            Toast.makeText(RegisterActivity.this, "Authentication failed.",
-//                                    Toast.LENGTH_SHORT).show();
-//                            updateUI(null);
-//                        }
-//                    }
-//                });
-//    }
+    protected void setNextBtnEnabled() {
+        if((editEmail.getText().length() != 0) && (editPassword.getText().length() != 0) &&
+                (editConfirmPassword.getText().length() != 0) && (editNickname.getText().length() != 0) &&
+                (editHeight.getText().length() != 0) && (editWeight.getText().length() != 0)) {
+            nextBtn.setEnabled(true);
+        }
+    }
+
 }

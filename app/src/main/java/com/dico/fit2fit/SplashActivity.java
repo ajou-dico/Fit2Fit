@@ -29,17 +29,10 @@ public class SplashActivity extends AppCompatActivity {
     EditText emailEdit;
     EditText passwordEdit;
 
-    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-
-        if(currentUser != null) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-        }
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acitvity_splash);
 
