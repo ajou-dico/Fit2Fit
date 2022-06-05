@@ -3,4 +3,10 @@
     <string name="title_dashboard">대시보드</string>
     <string name="title_recording">기록</string>
     <string name="title_setting">설정</string>
+
+    <string name="email">이메일</string>
+    <string name="password">비밀번호</string>
+    <string name="login">로그인</string>
+
+    <string name="register">계정이 없으신기요? 회원가입 하기</string>
 </resources>
