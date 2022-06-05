@@ -2,5 +2,6 @@
 <resources>
     <style name="TextviewStyle">
         <item name="android:text">placeholder</item>
+        <item name="android:fontFamily">@font/pretendard_medium</item>
     </style>
 </resources>
