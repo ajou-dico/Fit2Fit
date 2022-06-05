@@ -29,6 +29,9 @@
             android:exported="true"
             android:label="@string/input_user_info" >
         </activity>
+        <activity
+            android:name=".MainActivity">
+        </activity>
     </application>
 
 </manifest>
