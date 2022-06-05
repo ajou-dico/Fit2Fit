@@ -8,5 +8,8 @@
     <string name="password">비밀번호</string>
     <string name="login">로그인</string>
 
-    <string name="register">계정이 없으신기요? 회원가입 하기</string>
+    <string name="register_1">계정이 없으신가요?</string>
+    <string name="register_2"><u>회원가입 하기</u>></string>
+    <string name="input_user_info">회원 정보 입력</string>
+
 </resources>

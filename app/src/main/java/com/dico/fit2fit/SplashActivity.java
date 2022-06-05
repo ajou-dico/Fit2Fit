@@ -12,23 +12,32 @@ import android.widget.EditText;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class SplashActivity extends AppCompatActivity {
 
     Button logBtn;
     EditText emailEdit;
     EditText passwordEdit;
 
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        System.out.println("test123");
+        if(currentUser != null) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acitvity_splash);
 
         logBtn = (Button)findViewById(R.id.btn_login);
         emailEdit = (EditText)findViewById(R.id.editTextEmail);
         passwordEdit = (EditText)findViewById(R.id.editTextPassword);
-
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
 
         logBtn.setEnabled(false);
 
@@ -80,5 +89,10 @@ public class SplashActivity extends AppCompatActivity {
         } else {
             logBtn.setEnabled(false);
         }
+    }
+
+    public void onClickRegister(View v) {
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
     }
 }
