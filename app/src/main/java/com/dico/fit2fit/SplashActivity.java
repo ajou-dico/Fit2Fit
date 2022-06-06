@@ -38,14 +38,12 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         mAuth = FirebaseAuth.getInstance();
-        /**
-        로그인 이력이 있는 사용자일 경우 바로 메인 액티비티로 이동, 현재 MainActivity의 문제로 인해 앱 강제종료됨, 버그 수정 후 주석 처리 삭제 필요
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
             Intent intent = new Intent(SplashActivity.this, MainActivity.class);
             startActivity(intent);
         }
-        */
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acitvity_splash);
 
