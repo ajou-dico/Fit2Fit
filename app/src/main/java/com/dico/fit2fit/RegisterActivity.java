@@ -25,11 +25,9 @@ public class RegisterActivity extends AppCompatActivity {
     Button nextBtn;
     EditText editEmail;
     EditText editPassword;
-    EditText editConfirmPassword;
     EditText editNickname;
     EditText editHeight;
     EditText editWeight;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,7 +39,6 @@ public class RegisterActivity extends AppCompatActivity {
 
         editEmail = (EditText)findViewById(R.id.editTextEmail);
         editPassword = (EditText)findViewById(R.id.editTextPassword);
-        editConfirmPassword = (EditText)findViewById(R.id.editTextConfirmPassword);
         editNickname = (EditText)findViewById(R.id.editTextNickname);
         editHeight = (EditText)findViewById(R.id.editTextHeight);
         editWeight = (EditText)findViewById(R.id.editTextWeight);
@@ -63,22 +60,6 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
         editPassword.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                setNextBtnEnabled();
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
-        editConfirmPassword.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -163,10 +144,14 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     protected void setNextBtnEnabled() {
-        if((editEmail.getText().length() != 0) && (editPassword.getText().length() != 0) &&
-                (editConfirmPassword.getText().length() != 0) && (editNickname.getText().length() != 0) &&
-                (editHeight.getText().length() != 0) && (editWeight.getText().length() != 0)) {
+        if((editEmail.getText().length() != 0) &&
+                (editPassword.getText().length() != 0) &&
+                (editNickname.getText().length() != 0) &&
+                (editHeight.getText().length() != 0) &&
+                (editWeight.getText().length() != 0)) {
             nextBtn.setEnabled(true);
+        } else {
+            nextBtn.setEnabled(false);
         }
     }
 

@@ -14,6 +14,9 @@
             android:resource="@xml/actions" />
 
         <activity
+            android:name=".completeRegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".SettingGoalActivity"
             android:exported="false"
             android:label="@string/setting_goal" />
