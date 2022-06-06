@@ -10,7 +10,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,11 +33,11 @@ public class SplashActivity extends AppCompatActivity {
     Button logBtn;
     EditText emailEdit;
     EditText passwordEdit;
-
     private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //ActivityResultLauncher main
 
         mAuth = FirebaseAuth.getInstance();
         super.onCreate(savedInstanceState);
@@ -99,8 +104,7 @@ public class SplashActivity extends AppCompatActivity {
         Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
     }
-
-    private void signIn(String email, String password){
+    public void signIn(String email, String password){
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -110,8 +114,10 @@ public class SplashActivity extends AppCompatActivity {
                             Log.d("TAG", "signInWithEmail:success");
                             Toast.makeText(SplashActivity.this, "로그인 성공",
                                     Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+
                             startActivity(intent);
+                            finish();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("TAG", "signInWithEmail:failure", task.getException());
