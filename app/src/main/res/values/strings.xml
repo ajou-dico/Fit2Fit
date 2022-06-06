@@ -13,5 +13,6 @@
     <string name="input_user_info">회원 정보 입력</string>
     <string name="next_text">다음</string>
     <string name="setting_goal">운동 목표 설정</string>
+    <string name="complete">완료</string>
 
 </resources>

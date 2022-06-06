@@ -10,10 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fit2Fit">
         <activity
+            android:name=".completeRegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".SettingGoalActivity"
             android:exported="false"
-            android:label="@string/setting_goal"
-            />
+            android:label="@string/setting_goal" />
 
         <meta-data
             android:name="com.kakao.sdk.AppKey"
@@ -25,19 +27,17 @@
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".RegisterActivity"
             android:exported="true"
-            android:label="@string/input_user_info">
-        </activity>
+            android:label="@string/input_user_info"></activity>
         <activity
-            android:name=".MainActivity">
-            android:label="메인"
-        </activity>
+            android:name=".MainActivity"
+            android:label="메인"></activity>
     </application>
 
 </manifest>

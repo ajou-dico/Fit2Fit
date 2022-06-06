@@ -167,6 +167,8 @@ public class RegisterActivity extends AppCompatActivity {
                 (editConfirmPassword.getText().length() != 0) && (editNickname.getText().length() != 0) &&
                 (editHeight.getText().length() != 0) && (editWeight.getText().length() != 0)) {
             nextBtn.setEnabled(true);
+        } else {
+            nextBtn.setEnabled(false);
         }
     }
 

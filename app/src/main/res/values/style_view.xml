@@ -10,6 +10,11 @@
         <item name="android:fontFamily">@font/pretendard_bold</item>
         <item name="android:textSize">16sp</item>
     </style>
+    <style name="TitleTextView">
+        <item name="android:text">placeholder</item>
+        <item name="android:fontFamily">@font/pretendard_extrabold</item>
+        <item name="android:textSize">24sp</item>
+    </style>
     <style name="DateTextView">
         <item name="android:text">placeholder</item>
         <item name="android:fontFamily">@font/pretendard_medium</item>
@@ -24,5 +29,8 @@
         <item name="android:textColorHint">@color/gray_placeholer</item>
         <item name="android:textSize">16sp</item>
         <item name="android:fontFamily">@font/pretendard_semibold</item>
+    </style>
+    <style name="DateColorView">
+        <item name="android:color">@color/white</item>
     </style>
 </resources>
