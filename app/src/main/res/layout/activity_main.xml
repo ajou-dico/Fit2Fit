@@ -7,6 +7,21 @@
     android:layout_height="match_parent"
     android:paddingTop="?attr/actionBarSize">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/main_title"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="main"
+        app:titleTextColor="@color/white" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="0dp"
@@ -30,21 +45,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.982"
         app:navGraph="@navigation/mobile_navigation" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="test"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="92dp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="test2"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="92dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
