@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< Updated upstream
         <entry key="..\:/Users/Jinwonkim/Documents/GitHub/Fit2Fit/app/src/main/res/layout/activity_main.xml" value="0.17806484295845998" />
         <entry key="..\:/Users/sjang/Desktop/git/Fit2Fit/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2225" />
         <entry key="..\:/Users/sjang/Desktop/git/Fit2Fit/app/src/main/res/drawable/btn_rounded.xml" value="0.2265" />
@@ -44,6 +45,13 @@
         <entry key="app/src/main/res/layout/activity_maps.xml" value="0.12411347517730496" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.1962936401367188" />
         <entry key="app/src/main/res/layout/activity_setting_goal.xml" value="0.25425109863281253" />
+=======
+        <entry key="..\:/Users/Jinwonkim/Documents/GitHub/Fit2Fit/app/src/main/res/layout/fragment_dashboard.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Jinwonkim/Documents/GitHub/Fit2Fit/app/src/main/res/layout/fragment_home.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Jinwonkim/Documents/GitHub/Fit2Fit/app/src/main/res/layout/fragment_notifications.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/sjang/Desktop/git/Fit2Fit/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+>>>>>>> Stashed changes
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.19610507246376813" />
