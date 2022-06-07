@@ -1,3 +1,18 @@
+# wrapper
+wrapper/
+
+# .tmp
+.tmp/
+
+# caches
+caches/
+
+# native
+native/
+
+# daemon
+daemon/
+
 # Built application files
 *.apk
 *.aar
