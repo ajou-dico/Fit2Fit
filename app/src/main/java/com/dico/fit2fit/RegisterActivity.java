@@ -7,6 +7,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
@@ -127,13 +128,17 @@ public class RegisterActivity extends AppCompatActivity {
                 int height = Integer.parseInt(editHeight.getText().toString());
                 int weight = Integer.parseInt(editWeight.getText().toString());
 
-                Intent intent = new Intent(RegisterActivity.this, SettingGoalActivity.class);
-                intent.putExtra("userEmail", email);
-                intent.putExtra("userPassword", password);
-                intent.putExtra("userNickname", nickname);
-                intent.putExtra("userHeight", height);
-                intent.putExtra("userWeight", weight);
-                startActivity(intent);
+                if(password.length() < 6) {
+                    Toast.makeText(RegisterActivity.this, "비밀번호는 6자리 이상 입력해야 합니다.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent intent = new Intent(RegisterActivity.this, SettingGoalActivity.class);
+                    intent.putExtra("userEmail", email);
+                    intent.putExtra("userPassword", password);
+                    intent.putExtra("userNickname", nickname);
+                    intent.putExtra("userHeight", height);
+                    intent.putExtra("userWeight", weight);
+                    startActivity(intent);
+                }
             }
         });
     }

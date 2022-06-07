@@ -103,7 +103,6 @@ public class SettingGoalActivity extends AppCompatActivity {
         nextFinishBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 createAccount(email, password);
             }
         });
@@ -118,13 +117,15 @@ public class SettingGoalActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("TAG", "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-//                            updateUI(user);
+//                            setUserInfo(user);
+
+                            Intent intent = new Intent(SettingGoalActivity.this, completeRegisterActivity.class);
+                            startActivity(intent);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("TAG", "createUserWithEmail:failure", task.getException());
                             Toast.makeText(SettingGoalActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-//                            updateUI(null);
                         }
                     }
                 });
@@ -136,5 +137,9 @@ public class SettingGoalActivity extends AppCompatActivity {
         } else {
             nextFinishBtn.setEnabled(false);
         }
+    }
+
+    protected void setUserInfo(FirebaseUser user) {
+
     }
 }
