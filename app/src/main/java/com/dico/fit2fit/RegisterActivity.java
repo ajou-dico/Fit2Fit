@@ -4,21 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -34,6 +27,9 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
         nextBtn = findViewById(R.id.btn_create_account_next);
         nextBtn.setEnabled(false);
 
@@ -41,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
         editPassword = (EditText)findViewById(R.id.editTextPassword);
         editNickname = (EditText)findViewById(R.id.editTextNickname);
         editHeight = (EditText)findViewById(R.id.editTextHeight);
-        editWeight = (EditText)findViewById(R.id.editTextWeight);
+        editWeight = (EditText)findViewById(R.id.editTextGoalExerciseTime);
 
         editEmail.addTextChangedListener(new TextWatcher() {
             @Override
@@ -132,13 +128,17 @@ public class RegisterActivity extends AppCompatActivity {
                 int height = Integer.parseInt(editHeight.getText().toString());
                 int weight = Integer.parseInt(editWeight.getText().toString());
 
-                Intent intent = new Intent(RegisterActivity.this, SettingGoalActivity.class);
-                intent.putExtra("userEmail", email);
-                intent.putExtra("userPassword", password);
-                intent.putExtra("userNickname", nickname);
-                intent.putExtra("userHeight", height);
-                intent.putExtra("userWeight", weight);
-                startActivity(intent);
+                if(password.length() < 6) {
+                    Toast.makeText(RegisterActivity.this, "비밀번호는 6자리 이상 입력해야 합니다.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent intent = new Intent(RegisterActivity.this, SettingGoalActivity.class);
+                    intent.putExtra("userEmail", email);
+                    intent.putExtra("userPassword", password);
+                    intent.putExtra("userNickname", nickname);
+                    intent.putExtra("userHeight", height);
+                    intent.putExtra("userWeight", weight);
+                    startActivity(intent);
+                }
             }
         });
     }
