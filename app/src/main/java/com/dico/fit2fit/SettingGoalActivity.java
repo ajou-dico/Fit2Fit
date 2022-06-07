@@ -16,26 +16,43 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SettingGoalActivity extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
+    private static final String TAG = "Tag";
+    FirebaseAuth mAuth;
+    FirebaseFirestore db;
 
     Button nextFinishBtn;
-    EditText goalWeight;
-    EditText gaolExerciseTime;
+
+    EditText editGoalWeight;
+    EditText editGoalExerciseTime;
+
+    String email;
+    int goalExerciseTime;
+    int goalWeight;
+    String password;
     String goalDate;
+    String nickname;
+    int height;
+    int weight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         mAuth = FirebaseAuth.getInstance();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
+        db = FirebaseFirestore.getInstance();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting_goal);
@@ -43,17 +60,21 @@ public class SettingGoalActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-        goalWeight = (EditText)findViewById(R.id.editTextGoalWeight);
-        gaolExerciseTime = (EditText)findViewById(R.id.editTextGoalExerciseTime);
+        editGoalWeight = (EditText)findViewById(R.id.editTextGoalWeight);
+        editGoalExerciseTime = (EditText)findViewById(R.id.editTextGoalExerciseTime);
         nextFinishBtn = (Button)findViewById(R.id.btn_setting_goal);
         nextFinishBtn.setEnabled(false);
 
         Intent intent = getIntent();
-        String email = intent.getStringExtra("userEmail");
-        String password = intent.getStringExtra("userPassword");
-        String nickname = intent.getStringExtra("userNickname");
-        int height = intent.getIntExtra("userHeight", 0);
-        int weight = intent.getIntExtra("userWeight", 0);
+        email = intent.getStringExtra("userEmail");
+        /*
+        goalWeight = Integer.parseInt(editGoalWeight.getText().toString());
+        goalExerciseTime = Integer.parseInt(editGoalExerciseTime.getText().toString());
+        */
+        password = intent.getStringExtra("userPassword");
+        nickname = intent.getStringExtra("userNickname");
+        height = intent.getIntExtra("userHeight", 0);
+        weight = intent.getIntExtra("userWeight", 0);
 
         CalendarView cal = (CalendarView)findViewById(R.id.calendarView);
         cal.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
@@ -68,7 +89,7 @@ public class SettingGoalActivity extends AppCompatActivity {
                 goalDate = (String.valueOf(i) + "/" + month + "/" + String.valueOf(i2));
             }
         });
-        goalWeight.addTextChangedListener(new TextWatcher() {
+        editGoalWeight.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -81,10 +102,10 @@ public class SettingGoalActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-
+                goalWeight = Integer.parseInt(editGoalWeight.getText().toString());
             }
         });
-        gaolExerciseTime.addTextChangedListener(new TextWatcher() {
+        editGoalExerciseTime.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -97,7 +118,7 @@ public class SettingGoalActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-
+                goalExerciseTime = Integer.parseInt(editGoalExerciseTime.getText().toString());
             }
         });
         nextFinishBtn.setOnClickListener(new View.OnClickListener() {
@@ -117,8 +138,7 @@ public class SettingGoalActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("TAG", "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-//                            setUserInfo(user);
-
+                            setUserInfo();
                             Intent intent = new Intent(SettingGoalActivity.this, completeRegisterActivity.class);
                             startActivity(intent);
                         } else {
@@ -132,14 +152,33 @@ public class SettingGoalActivity extends AppCompatActivity {
     }
 
     private void setNextFinishBtn() {
-        if (goalWeight.getText().length() != 0 && gaolExerciseTime.getText().length() != 0) {
+        if (editGoalWeight.getText().length() != 0 && editGoalExerciseTime.getText().length() != 0) {
             nextFinishBtn.setEnabled(true);
         } else {
             nextFinishBtn.setEnabled(false);
         }
     }
 
-    protected void setUserInfo(FirebaseUser user) {
+    protected void setUserInfo() {
+// Create a new user with a first and last name
+        Map<String, Object> user = new HashMap<>();
+        userInfo usrInf = new userInfo(email, goalDate, goalExerciseTime, goalWeight, height, nickname, weight);
+        user.put("profile", usrInf);
 
+// Add a new document with a generated ID
+        db.collection("Users")
+                .add(user)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error adding document", e);
+                    }
+                });
     }
 }
