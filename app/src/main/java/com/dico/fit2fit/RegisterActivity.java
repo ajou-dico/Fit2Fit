@@ -4,21 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -34,6 +26,9 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
         nextBtn = findViewById(R.id.btn_create_account_next);
         nextBtn.setEnabled(false);
 
@@ -41,7 +36,7 @@ public class RegisterActivity extends AppCompatActivity {
         editPassword = (EditText)findViewById(R.id.editTextPassword);
         editNickname = (EditText)findViewById(R.id.editTextNickname);
         editHeight = (EditText)findViewById(R.id.editTextHeight);
-        editWeight = (EditText)findViewById(R.id.editTextWeight);
+        editWeight = (EditText)findViewById(R.id.editTextGoalExerciseTime);
 
         editEmail.addTextChangedListener(new TextWatcher() {
             @Override

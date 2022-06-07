@@ -38,14 +38,18 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         mAuth = FirebaseAuth.getInstance();
+        /** 주석 해제 시 사용자가 로그인 한 이력이 있으면 바로 메인으로 감
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
             Intent intent = new Intent(SplashActivity.this, MainActivity.class);
             startActivity(intent);
         }
-
+        */
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acitvity_splash);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         logBtn = (Button)findViewById(R.id.btn_login);
         emailEdit = (EditText)findViewById(R.id.editTextEmail);
@@ -108,6 +112,7 @@ public class SplashActivity extends AppCompatActivity {
         Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
     }
+
     public void signIn(String email, String password){
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -115,16 +120,13 @@ public class SplashActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            Log.d("TAG", "signInWithEmail:success");
-                            Toast.makeText(SplashActivity.this, "로그인 성공",
-                                    Toast.LENGTH_SHORT).show();
+                            // Log.d("TAG", "signInWithEmail:success");
                             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-
                             startActivity(intent);
                             finish();
                         } else {
                             // If sign in fails, display a message to the user.
-                            Log.w("TAG", "signInWithEmail:failure", task.getException());
+                            // Log.w("TAG", "signInWithEmail:failure", task.getException());
                             Toast.makeText(SplashActivity.this, "회원 정보가 일치하지 않습니다.",
                                     Toast.LENGTH_SHORT).show();
                         }

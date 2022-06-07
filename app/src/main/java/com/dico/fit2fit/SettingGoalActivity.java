@@ -1,11 +1,15 @@
 package com.dico.fit2fit;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
@@ -21,8 +25,12 @@ import java.util.Calendar;
 
 public class SettingGoalActivity extends AppCompatActivity {
 
-    Button nextFinishBtn;
     private FirebaseAuth mAuth;
+
+    Button nextFinishBtn;
+    EditText goalWeight;
+    EditText gaolExerciseTime;
+    String goalDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +40,11 @@ public class SettingGoalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting_goal);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
+        goalWeight = (EditText)findViewById(R.id.editTextGoalWeight);
+        gaolExerciseTime = (EditText)findViewById(R.id.editTextGoalExerciseTime);
         nextFinishBtn = (Button)findViewById(R.id.btn_setting_goal);
         nextFinishBtn.setEnabled(false);
 
@@ -46,8 +59,52 @@ public class SettingGoalActivity extends AppCompatActivity {
         cal.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
-                String goalDate;
-                goalDate = (String.valueOf(i) + "/" + String.valueOf(i1+1) + "/" + String.valueOf(i2));
+                String month;
+                if (i1+1 < 10) {
+                    month = "0" + String.valueOf(i1+1);
+                } else {
+                    month = String.valueOf(i1+1);
+                }
+                goalDate = (String.valueOf(i) + "/" + month + "/" + String.valueOf(i2));
+            }
+        });
+        goalWeight.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                setNextFinishBtn();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+        gaolExerciseTime.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                setNextFinishBtn();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+        nextFinishBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                createAccount(email, password);
             }
         });
     }
@@ -71,5 +128,13 @@ public class SettingGoalActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    private void setNextFinishBtn() {
+        if (goalWeight.getText().length() != 0 && gaolExerciseTime.getText().length() != 0) {
+            nextFinishBtn.setEnabled(true);
+        } else {
+            nextFinishBtn.setEnabled(false);
+        }
     }
 }
