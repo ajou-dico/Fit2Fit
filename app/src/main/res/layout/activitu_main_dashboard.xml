@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="대시보드"
+        android:textSize="24sp"
         android:textColor="@color/white"
         tools:layout_editor_absoluteX="32dp"
         tools:layout_editor_absoluteY="49dp" />
@@ -57,24 +58,21 @@
         android:id="@+id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
         android:layout_marginEnd="44dp"
         android:text="TextView"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/progressbar" />
+        tools:layout_editor_absoluteY="168dp" />
 
     <TextView
         android:id="@+id/settingtime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="40dp"
         android:text="TextView"
         android:textColor="@color/gray"
-        app:layout_constraintBottom_toBottomOf="@+id/progressbar"
-        app:layout_constraintStart_toStartOf="@+id/progressbar" />
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="196dp" />
 
     <View
         android:id="@+id/view2"
@@ -132,4 +130,5 @@
         android:textColor="@color/gray"
         app:layout_constraintStart_toStartOf="@+id/view3"
         app:layout_constraintTop_toTopOf="@+id/view3" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

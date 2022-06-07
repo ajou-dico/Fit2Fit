@@ -1,6 +1,7 @@
 package com.dico.fit2fit;
 
 import android.os.Bundle;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.dico.fit2fit.databinding.ActivituMainDashboardBinding;
 
 public class DashboardActivity extends AppCompatActivity {
+
+    private ActivituMainDashboardBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,15 +21,14 @@ public class DashboardActivity extends AppCompatActivity {
         time.setText(String.format("%d분",runtime));
 
         TextView settingtime = (TextView)findViewById(R.id.settingtime);
-        settingtime.setText(String.format("%d분",settime));
+        settingtime.setText(String.format("/%d분",settime));
 
         TextView usecal = (TextView)findViewById(R.id.usecal);
         usecal.setText(String.format("%d분",cal));
 
         TextView settingcal = (TextView)findViewById(R.id.settingcal);
-        settingcal.setText(String.format("%d분",setcal));
+        settingcal.setText(String.format("/%d분",setcal));
 
-
-        binding.progressbar.progress = 30;
+        binding.progressbar.progress = runtime/settime;
     }
 }
