@@ -22,21 +22,23 @@
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/btn_rounded"
-            android:drawableBottom="@drawable/ic_plus"
+            android:drawableLeft="@drawable/ic_plus"
+            android:text="운동 추가"
             android:paddingHorizontal="16dp"
             android:paddingVertical="12dp"
-            android:textSize="0sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ScrollView
-            android:layout_width="410dp"
-            android:layout_height="341dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rec_cal">
 
             <LinearLayout
                 android:layout_width="match_parent"

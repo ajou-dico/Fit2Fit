@@ -20,13 +20,12 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+
     private BottomNavigationView bottomNavigationView;
     private Fragment dashboard_f;
     private Fragment options_f;
     private Fragment recording_f;
     private Fragment workout_f;
-
-    int fragmentNum = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//
-//        androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
-//        actionBar.hide();
 
         dashboard_f = new dashboard();
         options_f = new options();
@@ -68,25 +64,12 @@ public class MainActivity extends AppCompatActivity {
     public void onFragmentChange(int fragNum) {
         //프래그먼트의 번호에 따라 다르게 작동하는 조건문
         if(fragNum == 1) {
-            fragmentNum = 1;
             getSupportFragmentManager().beginTransaction().replace(R.id.container, workout_f).commitAllowingStateLoss();
         } else if(fragNum == 2) {
-            fragmentNum = 2;
             getSupportFragmentManager().beginTransaction().replace(R.id.container, recording_f).commitAllowingStateLoss();
         } else if(fragNum == 3) {
-            fragmentNum = 3;
             getSupportFragmentManager().beginTransaction().replace(R.id.container, dashboard_f).commitAllowingStateLoss();
         }
     }
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        if (fragmentNum == 2) {
-//            getMenuInflater().inflate(R.menu.add_recording_menu, menu);
-//            Drawable drawable = menu.getItem(0).getIcon();
-//            drawable.setColorFilter(getResources().getColor(R.color.primary), PorterDuff.Mode.SRC_ATOP);
-//        }
-//        return true;
-//    }
 
 }
