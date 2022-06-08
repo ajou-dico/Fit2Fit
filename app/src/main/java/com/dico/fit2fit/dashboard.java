@@ -61,8 +61,9 @@ public class dashboard extends Fragment {
 
         mRecyclerView = rootView.findViewById(R.id.re_view);
         pbar = rootView.findViewById(R.id.p_bar);
+        int cur_ex_time = 2;
         pbar.setMax(100);
-        pbar.setProgress(20);
+        pbar.setProgress(cur_ex_time);
 
         last_ex = rootView.findViewById(R.id.last_ex);
         Goal_sec = rootView.findViewById(R.id.Goal_sec);
@@ -72,9 +73,9 @@ public class dashboard extends Fragment {
 
         last_ex.setImageResource(R.drawable.ic_jumpingjack);
         Goal_sec.setText("120분");
-        cur_sec.setText("20분");
+        cur_sec.setText(cur_ex_time + "분");
         Goal_Kcal.setText("500 Kcal");
-        cur_Kcal.setText("100 Kcal");
+        cur_Kcal.setText("20 Kcal");
 
         /* initiate adapter */
         mRecyclerAdapter = new MyRecyclerAdapter();
@@ -87,13 +88,13 @@ public class dashboard extends Fragment {
         /* adapt data */
         mfriendItems = new ArrayList<>();
         //mfriendItems.add() 친구 추가 후 등록
-        for(int i=1;i<=10;i++){
-            if(i%2==0)
-                mfriendItems.add(new FriendItem(i+"번째 사람"));
-            else
-                mfriendItems.add(new FriendItem(i+"번째 사람"));
+        mfriendItems.add(new FriendItem("이민준"));
+        mfriendItems.add(new FriendItem("서준"));
+        mfriendItems.add(new FriendItem("조성민"));
+        mfriendItems.add(new FriendItem("김민지"));
+        mfriendItems.add(new FriendItem("김승우"));
+        mfriendItems.add(new FriendItem("최슬기"));
 
-        }
         mRecyclerAdapter.setFriendList(mfriendItems);
 
         // Inflate the layout for this fragment
