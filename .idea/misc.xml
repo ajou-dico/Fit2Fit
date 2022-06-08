@@ -27,10 +27,11 @@
         <entry key="..\:/Users/sjang/Desktop/git/Fit2Fit/app/src/main/res/layout/acitvity_splash.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/sjang/Desktop/git/Fit2Fit/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/sjang/Desktop/git/Fit2Fit/app/src/main/res/layout/activity_register.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/sjang/Desktop/git/Fit2Fit/app/src/main/res/layout/activity_setting_goal.xml" value="0.22146739130434784" />
         <entry key="..\:/Users/sjang/Desktop/git/Fit2Fit/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
         <entry key="..\:/Users/sjang/Desktop/git/Fit2Fit/app/src/main/res/layout/fragment_home.xml" value="0.22146739130434784" />
         <entry key="..\:/Users/sjang/Desktop/git/Fit2Fit/app/src/main/res/layout/fragment_notifications.xml" value="0.22146739130434784" />
-        <entry key="..\:/Users/sjang/Desktop/git/Fit2Fit/app/src/main/res/layout/fragment_recording.xml" value="0.22146739130434784" />
+        <entry key="..\:/Users/sjang/Desktop/git/Fit2Fit/app/src/main/res/layout/fragment_recording.xml" value="0.264" />
         <entry key="..\:/Users/sjang/Desktop/git/Fit2Fit/app/src/main/res/layout/fragment_workout.xml" value="0.22146739130434784" />
         <entry key="..\:/Users/sjang/Desktop/git/Fit2Fit/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2085" />
@@ -63,5 +64,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.264" />
+      </ProjectState>
+    </option>
   </component>
 </project>
