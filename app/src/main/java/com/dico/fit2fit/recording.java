@@ -34,8 +34,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class recording extends Fragment {
-    private static final String TAG = "Tag";
+private static final String TAG = "Tag";
+
+public class  recording extends Fragment {
     MainActivity mainActivity;
     FirebaseAuth mAuth;
     FirebaseFirestore db;
