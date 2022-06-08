@@ -34,11 +34,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 71d10eed672fc63d93a5693e9e8ac623569a9c8d
 public class  recording extends Fragment {
     MainActivity mainActivity;
     FirebaseAuth mAuth;
@@ -96,7 +91,7 @@ public class  recording extends Fragment {
         return rootView;
     }
 
-<<<<<<< HEAD
+
 //    protected void setdateInfo() {
 //        DocumentReference DR = db.collection("Users").document();
 //        Map<String, Object> data = new HashMap<>();
@@ -133,7 +128,7 @@ public class  recording extends Fragment {
 //            }
 //        });
 //    }
-=======
+
     protected void setdateInfo() {
         DocumentReference DR = db.collection("Users").document();
         Map<String, Object> data = new HashMap<>();
@@ -172,5 +167,5 @@ public class  recording extends Fragment {
     }
 
     private static final String TAG = "Tag";
->>>>>>> 71d10eed672fc63d93a5693e9e8ac623569a9c8d
+
 }
