@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Fragment dashboard_f;
     private Fragment options_f;
     private Fragment recording_f;
+    private Fragment workout_f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         dashboard_f = new dashboard();
         options_f = new options();
         recording_f = new recording();
+        workout_f = new workout();
 
         bottomNavigationView = findViewById(R.id.bottom_nav);
         getSupportFragmentManager().beginTransaction().replace(R.id.container, dashboard_f).commit();
@@ -51,4 +53,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void onFragmentChange(int fragmentNum) {
+        //프래그먼트의 번호에 따라 다르게 작동하는 조건문
+        if(fragmentNum == 1) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, workout_f).commitAllowingStateLoss();
+        } else if(fragmentNum == 2) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, recording_f).commitAllowingStateLoss();
+        }
+    }
+
+
 }
