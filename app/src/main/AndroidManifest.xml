@@ -9,10 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fit2Fit">
-        <activity
-            android:name=".Timer"
-            android:exported="false" />
-
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@xml/actions" />
@@ -42,10 +38,10 @@
         <activity
             android:name=".RegisterActivity"
             android:exported="true"
-            android:label="@string/input_user_info" />
+            android:label="@string/input_user_info"></activity>
         <activity
             android:name=".MainActivity"
-            android:label="메인" />
+            android:label="메인"></activity>
     </application>
 
 </manifest>
