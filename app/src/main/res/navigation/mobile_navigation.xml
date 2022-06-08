@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.dico.fit2fit.ui.home.HomeFragment"
+        android:name="com.dico.fit2fit.dashboard"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_home" />
-
-    <fragment
-        android:id="@+id/navigation_recording"
-        android:name="com.dico.fit2fit.ui.dashboard.DashboardFragment"
-        android:label="@string/title_recording"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
+        android:id="@+id/navigation_recording"
+        android:name="com.dico.fit2fit.recording"
+        android:label="@string/title_recording"
+        tools:layout="@layout/fragment_recording" />
+
+    <fragment
         android:id="@+id/navigation_setting"
-        android:name="com.dico.fit2fit.ui.notifications.NotificationsFragment"
+        android:name="com.dico.fit2fit.options"
         android:label="@string/title_setting"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_options" />
 </navigation>
