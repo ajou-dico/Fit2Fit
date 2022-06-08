@@ -66,7 +66,7 @@ public class  recording extends Fragment {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
-        ImageButton button1 = rootView.findViewById(R.id.plus_btn);
+        Button button1 = rootView.findViewById(R.id.btn_add_exercise);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

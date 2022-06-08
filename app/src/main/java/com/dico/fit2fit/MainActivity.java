@@ -1,7 +1,10 @@
 package com.dico.fit2fit;
 
 import android.app.ActionBar;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -23,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private Fragment recording_f;
     private Fragment workout_f;
 
+    int fragmentNum = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         mAuth = FirebaseAuth.getInstance();
@@ -30,8 +35,9 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        ActionBar actionBar = getActionBar();
+//
+//        androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
+//        actionBar.hide();
 
         dashboard_f = new dashboard();
         options_f = new options();
@@ -59,16 +65,28 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void onFragmentChange(int fragmentNum) {
+    public void onFragmentChange(int fragNum) {
         //프래그먼트의 번호에 따라 다르게 작동하는 조건문
-        if(fragmentNum == 1) {
+        if(fragNum == 1) {
+            fragmentNum = 1;
             getSupportFragmentManager().beginTransaction().replace(R.id.container, workout_f).commitAllowingStateLoss();
-        } else if(fragmentNum == 2) {
+        } else if(fragNum == 2) {
+            fragmentNum = 2;
             getSupportFragmentManager().beginTransaction().replace(R.id.container, recording_f).commitAllowingStateLoss();
-        } else if(fragmentNum == 3) {
+        } else if(fragNum == 3) {
+            fragmentNum = 3;
             getSupportFragmentManager().beginTransaction().replace(R.id.container, dashboard_f).commitAllowingStateLoss();
         }
     }
 
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        if (fragmentNum == 2) {
+//            getMenuInflater().inflate(R.menu.add_recording_menu, menu);
+//            Drawable drawable = menu.getItem(0).getIcon();
+//            drawable.setColorFilter(getResources().getColor(R.color.primary), PorterDuff.Mode.SRC_ATOP);
+//        }
+//        return true;
+//    }
 
 }
