@@ -5,30 +5,32 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.dico.fit2fit.databinding.ActivituMainDashboardBinding;
 
-public class DashboardActivity extends AppCompatActivity {
-
-    private ActivituMainDashboardBinding binding;
+public class DashboardActivity extends Fragment {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activitu_main_dashboard);
+        setContentView(R.layout.fragment_dashboard);
 
         TextView time = (TextView)findViewById(R.id.time);
-        time.setText(String.format("%d분",runtime));
+        time.setText(String.format("%d분","5"));
 
         TextView settingtime = (TextView)findViewById(R.id.settingtime);
-        settingtime.setText(String.format("/%d분",settime));
+        settingtime.setText(String.format("/%d분",10));
 
         TextView usecal = (TextView)findViewById(R.id.usecal);
-        usecal.setText(String.format("%d분",cal));
+        usecal.setText(String.format("%d kcal","5"));
 
         TextView settingcal = (TextView)findViewById(R.id.settingcal);
-        settingcal.setText(String.format("/%d분",setcal));
+        settingcal.setText(String.format("/%d kcal","10"));
 
-        binding.progressbar.progress = runtime/settime;
+        ProgressBar progressBar = (ProgressBar)findViewById(R.id.progressbar);
+        progressBar.setProgress(30);
     }
 }
+
+//runtime, settime, cal, setcal

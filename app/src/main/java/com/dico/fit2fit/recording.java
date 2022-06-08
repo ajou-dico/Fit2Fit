@@ -15,7 +15,7 @@ import android.widget.ImageButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class recording extends Fragment {
+public class  recording extends Fragment {
     MainActivity mainActivity;
     FirebaseAuth mAuth;
     FirebaseFirestore db;

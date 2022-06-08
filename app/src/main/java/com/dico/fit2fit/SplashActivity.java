@@ -39,14 +39,14 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         mAuth = FirebaseAuth.getInstance();
         // 주석 해제 시 사용자가 로그인 한 이력이 있으면 바로 메인으로 감
-        /*
+
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
             Intent intent = new Intent(SplashActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
         }
-         */
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acitvity_splash);
