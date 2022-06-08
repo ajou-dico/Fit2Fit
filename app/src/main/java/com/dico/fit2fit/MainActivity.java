@@ -1,7 +1,10 @@
 package com.dico.fit2fit;
 
 import android.app.ActionBar;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -17,6 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+
     private BottomNavigationView bottomNavigationView;
     private Fragment dashboard_f;
     private Fragment options_f;
@@ -30,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        ActionBar actionBar = getActionBar();
 
         dashboard_f = new dashboard();
         options_f = new options();
@@ -59,16 +61,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void onFragmentChange(int fragmentNum) {
+    public void onFragmentChange(int fragNum) {
         //프래그먼트의 번호에 따라 다르게 작동하는 조건문
-        if(fragmentNum == 1) {
+        if(fragNum == 1) {
             getSupportFragmentManager().beginTransaction().replace(R.id.container, workout_f).commitAllowingStateLoss();
-        } else if(fragmentNum == 2) {
+        } else if(fragNum == 2) {
             getSupportFragmentManager().beginTransaction().replace(R.id.container, recording_f).commitAllowingStateLoss();
-        } else if(fragmentNum == 3) {
+        } else if(fragNum == 3) {
             getSupportFragmentManager().beginTransaction().replace(R.id.container, dashboard_f).commitAllowingStateLoss();
         }
     }
-
 
 }
