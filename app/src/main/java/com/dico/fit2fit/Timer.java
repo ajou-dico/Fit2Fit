@@ -31,16 +31,23 @@ import java.util.Map;
 
 public class Timer extends AppCompatActivity {
     private static final String TAG = "Tag";
+
     FirebaseAuth mAuth;
     FirebaseFirestore db;
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
     Button start, stop;
     Chronometer chronometer;
+
     long stopTime = 0;
-    long total_time=0;
+    long total_time = 0;
+
+    int weight;
     int work_time;
     int Kcal;
+
+    String exerciseType;
+    String todayDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +57,11 @@ public class Timer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer);
 
+        Intent intent = getIntent();
+
+        exerciseType = intent.getStringExtra("exerciseType");
+        todayDate = intent.getStringExtra("todayDate");
+
         chronometer = findViewById(R.id.chronometer);
         start = findViewById(R.id.startbtn);
         stop = findViewById(R.id.stopbtn);
@@ -58,7 +70,7 @@ public class Timer extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "운동 시작", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), "운동 시작", Toast.LENGTH_SHORT).show();
                 stopTime = 0;
                 chronometer.setBase(SystemClock.elapsedRealtime() + stopTime);
                 chronometer.start();
