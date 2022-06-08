@@ -63,28 +63,52 @@
         app:layout_constraintTop_toTopOf="@+id/view3" />
 
     <TextView
-        android:id="@+id/settingtime"
+        android:id="@+id/Goal_sec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginBottom="28dp"
-        android:text="TextView"
+
         android:textColor="@color/gray"
-        app:layout_constraintBottom_toBottomOf="@+id/progressbar"
-        app:layout_constraintStart_toStartOf="@+id/progressbar"
+        app:layout_constraintBottom_toBottomOf="@+id/p_bar"
+        app:layout_constraintStart_toStartOf="@+id/p_bar"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/usecal"
+        android:id="@+id/cur_sec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="44dp"
+
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/p_bar"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/burn_Kcal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="4dp"
-        android:text="TextView"
+
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/settingcal"
+        app:layout_constraintBottom_toTopOf="@+id/Goal_Kcal"
         app:layout_constraintStart_toStartOf="@+id/view2" />
+
+    <TextView
+        android:id="@+id/Goal_Kcal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="80dp"
+
+        android:textColor="@color/gray"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
 
     <TextView
         android:id="@+id/dashboard"
@@ -100,30 +124,6 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/settingcal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="80dp"
-        android:text="TextView"
-        android:textColor="@color/gray"
-        app:layout_constraintStart_toStartOf="@+id/view2"
-        app:layout_constraintTop_toTopOf="@+id/view2" />
-
-    <TextView
-        android:id="@+id/time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="44dp"
-        android:text="TextView"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/progressbar"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
         android:id="@+id/caloritext"
         style="@style/CaptionTextView"
         android:layout_width="wrap_content"
@@ -136,13 +136,13 @@
         app:layout_constraintTop_toTopOf="@+id/view2" />
 
     <ProgressBar
-        android:id="@+id/progressbar"
+        android:id="@+id/p_bar"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="118dp"
         android:layout_height="131dp"
         android:layout_gravity="center"
         android:indeterminate="false"
-        android:max="100"
+
         android:progressBackgroundTint="#3b3b3b"
         android:progressDrawable="@drawable/circle_progressbar"
         android:progressTint="#F44336"

@@ -2,6 +2,8 @@ package com.dico.fit2fit;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -35,16 +37,17 @@ public class Timer extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseFirestore db;
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
+    viewModel viewModel1;
     Button start, stop;
     Chronometer chronometer;
 
     long stopTime = 0;
-    long total_time = 0;
-
     int weight;
-    int work_time;
-    int Kcal;
+    int total_time = 0;
+    int work_time = 0;
+    int Kcal = 0;
+    dashboard dash;
+
 
     String exerciseType;
     String todayDate;
@@ -53,7 +56,6 @@ public class Timer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer);
 
@@ -68,6 +70,8 @@ public class Timer extends AppCompatActivity {
         start = findViewById(R.id.startbtn);
         stop = findViewById(R.id.stopbtn);
 
+//        viewModel1 = new ViewModelProvider(this, new NameViewModelFactory()).get(viewModel.class);
+//        뷰모델로 total 하려고 했는데 실패
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,12 +85,14 @@ public class Timer extends AppCompatActivity {
         stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "운동 종료", Toast.LENGTH_SHORT).show();
                 chronometer.stop();
                 stopTime = chronometer.getBase() - SystemClock.elapsedRealtime();
                 work_time = (int) stopTime;
                 work_time = -work_time/1000;
-                total_time += work_time;
+                total(work_time);
+                Toast toast = Toast.makeText(getApplicationContext(), "Toast test", Toast.LENGTH_SHORT);
+                toast.setText("운동 종료");
+                toast.show();
                 Kcal = 93*work_time/60;
                 setTime();
                 //stopTime을 파이어베이스로 넘기고 다시 기록화면으로 넘어가기
@@ -100,7 +106,8 @@ public class Timer extends AppCompatActivity {
         Map<String, Object> data = new HashMap<>();
         data.put("calories ", Kcal);
         data.put("exerciseSec: ", work_time);
-        DR.update("calories ",Kcal, "exerciseSec: ", work_time ).addOnSuccessListener(new OnSuccessListener<Void>() {
+        data.put("Totalsec: ", total_time);
+        DR.update("calories ",Kcal, "exerciseSec: ", work_time,"Totalsec: ",total_time ).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
                 Log.d(TAG, "Success");
@@ -112,4 +119,11 @@ public class Timer extends AppCompatActivity {
             }
         });
     }
+
+    public void total(int v){
+        total_time = total_time + v;
+
+
+    }
+
 }
