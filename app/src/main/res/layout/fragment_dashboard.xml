@@ -66,8 +66,8 @@
         android:id="@+id/Goal_sec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="40dp"
 
         android:textColor="@color/gray"
         app:layout_constraintBottom_toBottomOf="@+id/p_bar"
@@ -78,8 +78,8 @@
         android:id="@+id/cur_sec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="44dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="64dp"
 
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -91,7 +91,7 @@
         android:id="@+id/burn_Kcal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="48dp"
         android:layout_marginBottom="4dp"
 
         android:textColor="@color/white"
@@ -103,8 +103,8 @@
         android:id="@+id/Goal_Kcal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="68dp"
 
         android:textColor="@color/gray"
         app:layout_constraintStart_toStartOf="@+id/view2"
@@ -134,6 +134,20 @@
         android:textColor="@color/gray"
         app:layout_constraintStart_toStartOf="@+id/view2"
         app:layout_constraintTop_toTopOf="@+id/view2" />
+
+    <ImageView
+        android:id="@+id/last_ex"
+        android:layout_width="62dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="15dp"
+        android:background="@color/primary"
+        app:layout_constraintBottom_toBottomOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintHorizontal_bias="0.383"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toTopOf="@+id/view3"
+        app:layout_constraintVertical_bias="0.773"
+        app:srcCompat="@drawable/ic_jumpingjack" />
 
     <ProgressBar
         android:id="@+id/p_bar"

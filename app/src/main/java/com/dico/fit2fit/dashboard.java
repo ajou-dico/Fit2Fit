@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -29,7 +30,10 @@ import java.util.List;
 
 public class dashboard extends Fragment {
     ImageButton add_f;
+    ImageView last_ex;
     ProgressBar pbar;
+    TextView Goal_sec,cur_sec, Goal_Kcal, cur_Kcal;
+
     private RecyclerView mRecyclerView;
     private MyRecyclerAdapter mRecyclerAdapter;
     private ArrayList<FriendItem> mfriendItems;
@@ -58,12 +62,19 @@ public class dashboard extends Fragment {
         mRecyclerView = rootView.findViewById(R.id.re_view);
         pbar = rootView.findViewById(R.id.p_bar);
         pbar.setMax(100);
+        pbar.setProgress(20);
 
-        TextView Goal_sec,cur_sec, Goal_Kcal, cur_Kcal;
+        last_ex = rootView.findViewById(R.id.last_ex);
         Goal_sec = rootView.findViewById(R.id.Goal_sec);
         cur_sec = rootView.findViewById(R.id.cur_sec);
         Goal_Kcal = rootView.findViewById(R.id.Goal_Kcal);
         cur_Kcal = rootView.findViewById(R.id.burn_Kcal);
+
+        last_ex.setImageResource(R.drawable.ic_jumpingjack);
+        Goal_sec.setText("120분");
+        cur_sec.setText("20분");
+        Goal_Kcal.setText("500 Kcal");
+        cur_Kcal.setText("100 Kcal");
 
         /* initiate adapter */
         mRecyclerAdapter = new MyRecyclerAdapter();
