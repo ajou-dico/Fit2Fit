@@ -7,27 +7,27 @@
     android:background="@color/black">
 
     <View
-        android:id="@+id/view3"
+        android:id="@+id/view31"
         android:layout_width="163dp"
         android:layout_height="107dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:background="@color/gray_deep"
-        app:layout_constraintStart_toEndOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/view2" />
+        app:layout_constraintStart_toEndOf="@+id/view1"
+        app:layout_constraintTop_toBottomOf="@+id/view21" />
 
     <View
-        android:id="@+id/view2"
+        android:id="@+id/view21"
         android:layout_width="163dp"
         android:layout_height="107dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="68dp"
         android:background="@color/gray_deep"
-        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintStart_toEndOf="@+id/view1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/view1"
         android:layout_width="163dp"
         android:layout_height="225dp"
         android:layout_marginStart="32dp"
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/textView71"
         style="@style/TitleTextView"
         android:layout_width="121dp"
         android:layout_height="53dp"
@@ -53,7 +53,7 @@
         app:layout_constraintVertical_bias="0.47" />
 
     <TextView
-        android:id="@+id/exercisetext"
+        android:id="@+id/exercisetext1"
         style="@style/CaptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -61,23 +61,23 @@
         android:layout_marginTop="12dp"
         android:text="최근에 한 운동"
         android:textColor="@color/gray"
-        app:layout_constraintStart_toStartOf="@+id/view3"
-        app:layout_constraintTop_toTopOf="@+id/view3" />
+        app:layout_constraintStart_toStartOf="@+id/view31"
+        app:layout_constraintTop_toTopOf="@+id/view31" />
 
     <TextView
-        android:id="@+id/Goal_sec"
+        android:id="@+id/Goal_sec1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginBottom="40dp"
 
         android:textColor="@color/gray"
-        app:layout_constraintBottom_toBottomOf="@+id/p_bar"
-        app:layout_constraintStart_toStartOf="@+id/p_bar"
+        app:layout_constraintBottom_toBottomOf="@+id/p_bar1"
+        app:layout_constraintStart_toStartOf="@+id/p_bar1"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/cur_sec"
+        android:id="@+id/cur_sec1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
@@ -85,12 +85,12 @@
 
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/p_bar"
+        app:layout_constraintEnd_toEndOf="@+id/view1"
+        app:layout_constraintTop_toTopOf="@+id/p_bar1"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/burn_Kcal"
+        android:id="@+id/burn_Kcal1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
@@ -98,22 +98,22 @@
 
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/Goal_Kcal"
-        app:layout_constraintStart_toStartOf="@+id/view2" />
+        app:layout_constraintBottom_toTopOf="@+id/Goal_Kcal1"
+        app:layout_constraintStart_toStartOf="@+id/view21" />
 
     <TextView
-        android:id="@+id/Goal_Kcal"
+        android:id="@+id/Goal_Kcal1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
         android:layout_marginTop="68dp"
 
         android:textColor="@color/gray"
-        app:layout_constraintStart_toStartOf="@+id/view2"
-        app:layout_constraintTop_toTopOf="@+id/view2" />
+        app:layout_constraintStart_toStartOf="@+id/view21"
+        app:layout_constraintTop_toTopOf="@+id/view21" />
 
     <TextView
-        android:id="@+id/dashboard"
+        android:id="@+id/dashboard1"
         style="@style/TitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -127,7 +127,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/caloritext"
+        android:id="@+id/caloritext1"
         style="@style/CaptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -135,40 +135,11 @@
         android:layout_marginTop="4dp"
         android:text="오늘 소모한 칼로리"
         android:textColor="@color/gray"
-        app:layout_constraintStart_toStartOf="@+id/view2"
-        app:layout_constraintTop_toTopOf="@+id/view2" />
-
-    <TextView
-        android:id="@+id/last_ex_txt"
-        style="@style/CaptionTextView"
-        android:layout_width="60dp"
-        android:layout_height="29dp"
-        android:layout_marginEnd="8dp"
-        android:text="점핑잭"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/view3"
-        app:layout_constraintEnd_toEndOf="@+id/view3"
-        app:layout_constraintTop_toTopOf="@+id/view3"
-        app:layout_constraintVertical_bias="0.659" />
-
-    <ImageView
-        android:id="@+id/last_ex"
-        android:layout_width="62dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="15dp"
-        android:background="@color/primary"
-        app:layout_constraintBottom_toBottomOf="@+id/view3"
-        app:layout_constraintEnd_toEndOf="@+id/view3"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/view3"
-        app:layout_constraintTop_toTopOf="@+id/view3"
-        app:layout_constraintVertical_bias="0.773"
-        app:srcCompat="@drawable/ic_jumpingjack" />
+        app:layout_constraintStart_toStartOf="@+id/view21"
+        app:layout_constraintTop_toTopOf="@+id/view21" />
 
     <ProgressBar
-        android:id="@+id/p_bar"
+        android:id="@+id/p_bar1"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="118dp"
         android:layout_height="131dp"
@@ -178,15 +149,15 @@
         android:progressBackgroundTint="#3b3b3b"
         android:progressDrawable="@drawable/circle_progressbar"
         android:progressTint="#F44336"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/view1"
+        app:layout_constraintEnd_toEndOf="@+id/view1"
         app:layout_constraintHorizontal_bias="0.511"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view1"
+        app:layout_constraintTop_toTopOf="@+id/view1"
         app:layout_constraintVertical_bias="0.265" />
 
     <ImageButton
-        android:id="@+id/add_f"
+        android:id="@+id/add_f1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -198,7 +169,7 @@
         app:srcCompat="@drawable/ic_friends" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/re_view"
+        android:id="@+id/re_view1"
         android:layout_width="409dp"
         android:layout_height="341dp"
         app:layout_constraintBottom_toBottomOf="parent"

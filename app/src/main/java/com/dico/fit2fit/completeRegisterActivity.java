@@ -21,7 +21,7 @@ public class completeRegisterActivity extends AppCompatActivity {
         completeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(completeRegisterActivity.this, MainActivity.class);
+                Intent intent = new Intent(completeRegisterActivity.this, SplashActivity.class);
                 startActivity(intent);
                 finish();
             }

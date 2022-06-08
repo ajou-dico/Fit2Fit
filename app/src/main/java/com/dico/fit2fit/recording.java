@@ -24,7 +24,7 @@ import java.util.Calendar;
 
 
 public class  recording extends Fragment {
-    MainActivity mainActivity;
+
     FirebaseAuth mAuth;
     FirebaseFirestore db;
 
@@ -35,7 +35,7 @@ public class  recording extends Fragment {
 
     ArrayAdapter<String> adapter;
     ArrayList<String> arrayList;
-
+    MainActivity mainActivity;
     public void onAttach(Context context){
         super.onAttach(context);
         mainActivity = (MainActivity) getActivity();

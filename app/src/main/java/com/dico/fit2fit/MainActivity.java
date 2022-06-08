@@ -1,6 +1,7 @@
 package com.dico.fit2fit;
 
 import android.app.ActionBar;
+import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private Fragment options_f;
     private Fragment recording_f;
     private Fragment workout_f;
+    private Fragment dashboard_f1;
+    int change;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +38,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        dashboard_f1 = new dashboard_init();
         dashboard_f = new dashboard();
         options_f = new options();
         recording_f = new recording();
         workout_f = new workout();
 
+        Intent intent = getIntent();
+        change = intent.getIntExtra("dash",0);
         bottomNavigationView = findViewById(R.id.bottom_nav);
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, dashboard_f).commit();
+
+        if(change == 1){
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, dashboard_f).commit();
+        } else{
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, dashboard_f1).commit();
+        }
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

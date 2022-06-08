@@ -97,6 +97,7 @@ public class Timer extends AppCompatActivity {
                 setTime();
                 //stopTime을 파이어베이스로 넘기고 다시 기록화면으로 넘어가기
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.putExtra("dash",1);
                 startActivity(intent);
             }
         });
