@@ -1,5 +1,6 @@
 package com.dico.fit2fit;
 
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -26,8 +27,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ActionBar actionBar = getActionBar();
+
         dashboard_f = new dashboard();
         options_f = new options();
         recording_f = new recording();

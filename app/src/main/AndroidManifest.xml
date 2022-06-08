@@ -45,7 +45,7 @@
             android:label="@string/input_user_info" />
         <activity
             android:name=".MainActivity"
-            android:label="메인" />
+            android:label="fit2fit" />
     </application>
 
 </manifest>
