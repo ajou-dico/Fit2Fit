@@ -23,6 +23,7 @@ public class addExerciseActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         todayDate = intent.getStringExtra("todayDate");
+        System.out.println("[todayDate] " + todayDate);
 
         burpeeStart = findViewById(R.id.btn_burpee);
         crunchStart = findViewById(R.id.btn_crunch);

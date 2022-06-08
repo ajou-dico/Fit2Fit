@@ -76,8 +76,8 @@ public class  recording extends Fragment {
         addExBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), addExerciseActivity.class);
-                intent.putExtra("date", todayDate);
+                Intent intent = new Intent(getActivity().getApplicationContext(), addExerciseActivity.class);
+                intent.putExtra("date", 341);
                 startActivity(intent);
             }
         });

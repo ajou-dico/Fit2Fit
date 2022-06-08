@@ -62,6 +62,8 @@ public class Timer extends AppCompatActivity {
         exerciseType = intent.getStringExtra("exerciseType");
         todayDate = intent.getStringExtra("todayDate");
 
+        System.out.println("[Intent Data] " + exerciseType + ", " + todayDate);
+
         chronometer = findViewById(R.id.chronometer);
         start = findViewById(R.id.startbtn);
         stop = findViewById(R.id.stopbtn);
