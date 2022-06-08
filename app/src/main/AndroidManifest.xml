@@ -24,6 +24,9 @@
             android:name=".SettingGoalActivity"
             android:exported="false"
             android:label="@string/setting_goal" />
+        <activity
+            android:name=".add_friend"
+            android:exported="false" />
 
         <meta-data
             android:name="com.kakao.sdk.AppKey"

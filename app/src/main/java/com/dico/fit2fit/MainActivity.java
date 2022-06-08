@@ -60,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().replace(R.id.container, workout_f).commitAllowingStateLoss();
         } else if(fragmentNum == 2) {
             getSupportFragmentManager().beginTransaction().replace(R.id.container, recording_f).commitAllowingStateLoss();
+        } else if(fragmentNum == 3) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, dashboard_f).commitAllowingStateLoss();
         }
     }
 

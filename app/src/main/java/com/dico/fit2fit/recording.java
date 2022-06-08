@@ -34,13 +34,18 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-private static final String TAG = "Tag";
+<<<<<<< HEAD
+=======
 
+
+>>>>>>> 71d10eed672fc63d93a5693e9e8ac623569a9c8d
 public class  recording extends Fragment {
     MainActivity mainActivity;
     FirebaseAuth mAuth;
     FirebaseFirestore db;
+
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
     String burpee, crunch, jumpinjack, legrasie, lunge, plank, pushup, situp, squat;
     String goalDate;
     ArrayAdapter<String> adapter;
@@ -91,6 +96,44 @@ public class  recording extends Fragment {
         return rootView;
     }
 
+<<<<<<< HEAD
+//    protected void setdateInfo() {
+//        DocumentReference DR = db.collection("Users").document();
+//        Map<String, Object> data = new HashMap<>();
+//        date dayInf = new date(goalDate);
+//        data.put("dateExercise", dayInf);
+//        DR.set(data).addOnSuccessListener(new OnSuccessListener<Void>() {
+//            @Override
+//            public void onSuccess(Void unused) {
+//                Log.d(TAG, "Success");
+//            }
+//        }).addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception e) {
+//                Log.w(TAG, "Error adding document", e);
+//            }
+//        });
+//    }
+//    protected void setExInfo() {
+//        DocumentReference DR = db.collection("Users").document(user.getUid());
+//
+//        Map<String, Object> work_data = new HashMap<>();
+//        worklist workInf = new worklist(burpee, crunch, jumpinjack, legrasie, lunge, plank, pushup, situp, squat);
+//        work_data.put(goalDate, workInf);
+//
+//        DR.update(work_data).addOnSuccessListener(new OnSuccessListener<Void>() {
+//            @Override
+//            public void onSuccess(Void unused) {
+//                Log.d(TAG, "Success");
+//            }
+//        }).addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception e) {
+//                Log.w(TAG, "Error adding document", e);
+//            }
+//        });
+//    }
+=======
     protected void setdateInfo() {
         DocumentReference DR = db.collection("Users").document();
         Map<String, Object> data = new HashMap<>();
@@ -127,4 +170,7 @@ public class  recording extends Fragment {
             }
         });
     }
+
+    private static final String TAG = "Tag";
+>>>>>>> 71d10eed672fc63d93a5693e9e8ac623569a9c8d
 }
