@@ -34,13 +34,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-private static final String TAG = "Tag";
+
 
 public class  recording extends Fragment {
     MainActivity mainActivity;
     FirebaseAuth mAuth;
     FirebaseFirestore db;
+
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
     String burpee, crunch, jumpinjack, legrasie, lunge, plank, pushup, situp, squat;
     String goalDate;
     ArrayAdapter<String> adapter;
@@ -127,4 +129,6 @@ public class  recording extends Fragment {
             }
         });
     }
+
+    private static final String TAG = "Tag";
 }
